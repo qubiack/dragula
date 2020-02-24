@@ -456,9 +456,7 @@ function dragula(initialContainers, options) {
         mover = reference;
       }
       var moverIndex = movers.indexOf(mover);
-      console.log('animate',o.animation, item.parentElement === dropTarget);
       if (o.animation && item.parentElement === dropTarget) {
-        console.log('animate');
         animate(rects[moverIndex], mover, o.animation);
         animate(itemRect, item, o.animation);
       }
@@ -684,8 +682,7 @@ function nextEl(el) {
 
 
 function animate(prevRect, target, time) {
-  console.log('animate', prevRect, target, time);
-  if (time) {
+    if (time) {
     if (!prevRect || !target) {
       return;
     }
