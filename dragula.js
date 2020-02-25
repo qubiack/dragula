@@ -689,6 +689,7 @@ function animate(prevRect, target, time) {
     var currentRect = target.getBoundingClientRect();
     target.style.transition = 'none';
     target.style.transform = 'translate3d(' + (prevRect.left - currentRect.left) + 'px,' + (prevRect.top - currentRect.top) + 'px,0)';
+    new WebKitCSSMatrix(window.getComputedStyle(target, null).webkitTransform); //repaint fix ssr
     target.offsetWidth; // repaint
     target.style.transition = 'all ' + time + 'ms';
     target.style.transform = 'translate3d(0,0,0)';
